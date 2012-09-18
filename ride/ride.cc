@@ -25,11 +25,11 @@ int main()
 	ifstream fin ("ride.in");
 	ofstream fout ("ride.out");
 
-	string cometStr, groupStr;
-	fin >> cometStr >> groupStr;
+	string cometName, groupName;
+	fin >> cometName >> groupName;
 
-	int cometNum = getNumFromName(cometStr);
-	int groupNum = getNumFromName(groupStr);
+	int cometNum = getNumFromName(cometName);
+	int groupNum = getNumFromName(groupName);
 
 	if (groupNum % 47 == cometNum % 47)
 	{
