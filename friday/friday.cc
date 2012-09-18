@@ -101,24 +101,32 @@ void calcThirteenth(int month, int year, int &firstDay int *thirteenthCountPerDa
 	}
 }
 
-int main()
+int getEndYear()
 {
 	ifstream fin("friday.in");
-
 	int numYears;
 	fin >> numYears;
-	int endYear = START_YEAR + numYears - 1;
+	return START_YEAR + numYears - 1;
+}
 
+int main()
+{
+	int endYear = getEndYear();
+
+	//Stores the number of times that the thirteen shows up for each day.  SAT = 0, SUN = 1, ... FRI = 6.
+	// Ex: If there have been 10 times that the thirteenth shows up on a Thursday, then 
+	// thirteenthCountPerDay[THU] = 10 
 	int thirteenthCountPerDay[NUM_DAYS];
 
-	int firstDay = MON;
+	int firstDayOfMonth = MON;
 	for (int year = START_YEAR; year <= endYear; ++year)
 	{
 		for (int month = JAN; month <= DEC; ++month)
 		{
-			calcThirteenth(month, year, firstDay, thirteenthCountPerDay);
+			calcThirteenth(month, year, firstDayOfMonth, thirteenthCountPerDay);
 		}
 	}
+
 	printResults(thirteenthCountPerDay);
 
 	return 0;
