@@ -61,7 +61,7 @@ bool isLeapYear(int year)
 	}
 }
 
-void calcThirteenth(int month, int year, int &firstDay int *thirteenthCountPerDay)
+void calcDayOfThirteenth(int month, int year, int &firstDay int *thirteenthCountPerDay)
 {
 	const int DISTANCE_TO_13TH = 12;
 	const int DAYS_IN_WEEK = 7;
@@ -123,7 +123,7 @@ int main()
 	{
 		for (int month = JAN; month <= DEC; ++month)
 		{
-			calcThirteenth(month, year, firstDayOfMonth, thirteenthCountPerDay);
+			calcDayOfThirteenth(month, year, firstDayOfMonth, thirteenthCountPerDay);
 		}
 	}
 
